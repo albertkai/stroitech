@@ -1,0 +1,191 @@
+@import 'compass';
+@import 'normalize.css';
+
+//Vars
+
+$main: #001ca8;
+$main_light: #adc4ff;
+$secondary: #ffce1d;
+
+//Base
+body{
+  font: 100 16px Helvetica;
+}
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+  font-weight: normal;
+}
+h1{
+  font-size: 24px;
+  color: $main;
+}
+
+header {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  background: #d9d9d9;
+  .gradient-overlay {
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+    position: absolute;
+    background-color: rgb(214, 214, 214);
+    // Old browsers
+    @include filter-gradient(#d6d6d6, #0e0e0e, horizontal);
+    // IE6-9 fallback on horizontal gradient
+    @include background-image(radial-gradient(center, ellipse cover, rgba(214, 214, 214, 1) 0%, rgba(14, 14, 14, 1) 85%));
+  }
+  .logo-cont {
+    height: 110px;
+    background: $main;
+    .logo {
+      font-size: 40px;
+      position: absolute;
+      color: white;
+      left: 31px;
+      top: 10px;
+    }
+    .phone {
+      font-size: 25px;
+      position: absolute;
+      right: 70px;
+      top: 21px;
+      color: white;
+    }
+    nav {
+      position: absolute;
+      top: 62px;
+      right: 60px;
+    }
+  }
+}
+footer{
+  min-height: 120px;
+  line-height: 120px;
+  margin-top: 110px;
+  background: #d9d9d9;
+  font-size: 24px;
+  color: white;
+}
+a{
+  font-size: 14px;
+  margin: 0 10px;
+  color: white;
+  cursor: pointer;
+  @include transition(all .4s ease);
+  &:hover{
+    color: $secondary;
+  }
+}
+
+
+
+
+
+//Common
+.c-centered{
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
+.c-line{
+  height: 3px;
+  background: $secondary;
+  margin: 60px auto;
+}
+.grid-bigger{
+  width:55%;
+}
+
+
+//Top info
+
+.top-info{
+  table{
+    width: 100%;
+    tr{
+      td{
+        text-align: center;
+        padding: 20px;
+      }
+    }
+  }
+  //Writing some styles outside of table just to improve readability
+  .int{
+    font-size: 73px;
+    margin-right: 7px;
+  }
+}
+
+//Current-works
+
+.current-works{
+  height: 30px;
+  margin: 20px auto;
+  background: orange;
+}
+
+//About
+
+.about{
+  height: 410px;
+  .quot{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    width: 250px;
+    height: 250px;
+    color: white;
+    background: darkblue;
+    padding: 30px;
+    font-size: 21px;
+    line-height: 33px;
+  }
+}
+
+//Constructor teaser
+
+.constr-teaser {
+  .constr-button {
+    position: relative;
+    width: 450px;
+    height: 167px;
+    background: $main;
+    margin: 0 auto;
+    cursor: pointer;
+    @include transition(all .4s ease);
+    &:hover{
+      background: $main_light;
+    }
+    .logo {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      width: 120px;
+      height: 120px;
+      background: white;
+      display: block;
+      font-size: 30px;
+      color: white;
+    }
+    p{
+      color: white;
+      width: 330px;
+      position: absolute;
+      left: 170px;
+      top: 51px;
+      font-size: 30px;
+      span{
+        font-size: 21px;
+        margin-top: -2px;
+        display: block;
+        color: #ccc;
+      }
+    }
+  }
+}
+
+
+
+@import 'constructor'
