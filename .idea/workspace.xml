@@ -4,10 +4,10 @@
     <list default="true" id="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" name="Default" comment="" />
     <ignored path="stroitex.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366930747671" ignored="false" />
+    <file path="/index.html" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366992326724" ignored="false" />
     <file path="/dummy.xml" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366930530551" ignored="false" />
-    <file path="/main.scss" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366932362559" ignored="false" />
-    <file path="/top_info.scss" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366927784847" ignored="false" />
+    <file path="/main.scss" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366992201380" ignored="false" />
+    <file path="/top_info.scss" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366980266473" ignored="false" />
     <file path="/current_works.scss" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366928045576" ignored="false" />
     <file path="/constructor.html" changelist="52593a4f-1214-4d74-8214-8d1fe5ffc5cd" time="1366931584423" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +41,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="0" selection-start="3617" selection-end="4212" vertical-scroll-proportion="-11.791667">
+            <state line="24" column="76" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-8.75">
               <folding />
             </state>
           </provider>
@@ -50,7 +50,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="36" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.704918">
+            <state line="144" column="0" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.8606557">
               <folding />
             </state>
           </provider>
@@ -86,7 +86,7 @@
       <file leaf-file-name="top_info.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/top_info.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="227" vertical-scroll-proportion="-0.0">
+            <state line="15" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="-9.0">
               <folding />
             </state>
           </provider>
@@ -132,10 +132,10 @@
         <option value="$PROJECT_DIR$/app/styles/main.sass" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/styles/normalize.css" />
-        <option value="$PROJECT_DIR$/app/styles/top_info.scss" />
         <option value="$PROJECT_DIR$/app/styles/current_works.scss" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/constructor.html" />
+        <option value="$PROJECT_DIR$/app/styles/top_info.scss" />
+        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
       </list>
     </option>
@@ -449,20 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="401" column="1" selection-start="7588" selection-end="7588" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/top_info.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="227" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="13" selection-start="800" selection-end="800" vertical-scroll-proportion="0.63829786">
@@ -470,23 +456,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/current_works.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="76" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/constructor.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="0" selection-start="3617" selection-end="4212" vertical-scroll-proportion="-11.791667">
           <folding />
         </state>
       </provider>
@@ -505,9 +477,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/top_info.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="244" selection-end="244" vertical-scroll-proportion="-9.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/normalize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="401" column="1" selection-start="7588" selection-end="7588" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/current_works.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="76" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="76" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="36" selection-start="1371" selection-end="1371" vertical-scroll-proportion="0.704918">
+        <state line="144" column="0" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.8606557">
           <folding />
         </state>
       </provider>
