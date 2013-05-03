@@ -9,30 +9,49 @@ $secondary: #fff46a;
 
 //Base
 body{
-  font: 100 16px Helvetica;
+  font: 100 16px Roboto;
   color: #666;
 }
+
 h1, h2, h3, h4, h5, h6, p{
   margin: 0;
   font-weight: 100;
+  color: $main;
 }
 h1{
-  font-size: 32px;
+  font-size: 50px;
   color: $main;
   margin: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
 }
 h2{
   font-size: 28px;
   color: $main;
   margin: 18px 0;
+  margin-top: 0;
 }
 h3{
-  font-size: 24px;
+  font-size: 28px;
   color: $main;
   margin: 18px 0;
 }
-
-
+h4{
+  font-size: 18px;
+  margin-top: 5px;
+}
+select{
+  border: 1px solid #ccc;
+  color: #333;
+}
+p{
+  font-size: 15px;
+}
+ul{
+  li{
+    font-size: 15px;
+  }
+}
 header {
   position: relative;
   height: 300px;
@@ -80,11 +99,16 @@ header {
 
 footer{
   min-height: 120px;
-  line-height: 120px;
+  padding-top: 20px;
   margin-top: 110px;
   background: $main_light;
   font-size: 24px;
   color: white;
+  nav{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+  }
 }
 a{
   font-size: 14px;
@@ -114,12 +138,82 @@ a{
 }
 .grid-bigger{
   width:55%;
+  p{
+    margin-top: 15px;
+  }
+}
+.image-modal{
+  position: fixed;
+  width: 700px;
+  min-height: 300px;
+  padding: 10px;
+  z-index: 100;
+  background: white;
+  top: 10%;
+  left: 50%;
+  margin-left: -360px;
+  text-align: center;
+  @include transition(all .4s ease);
+  img{
+    width: 700px;
+  }
+  &._loading{
+    @include transform(scale(.3));
+  }
+}
+.modal-overlay{
+  display: none;
+  width: 100%;
+  height: 100%;
+  @include opacity(.8);
+  background: white;
+  position: fixed;
+  z-index: 99;
+}
+.overlay{
+  width: 61px;
+  height: 67px;
+  background: url(../images/marker.png);
+}
+.tab{
+  &.tab-switch{
+    color: $main;
+    display: block;
+    font-size: 22px;
+    margin: 0;
+    padding-left: 7px;
+    &:hover{
+      background: $main_light;
+      color: white;
+    }
+    &._active{
+      background: $main;
+      color: white;
+    }
+  }
+  &.tab-content{
+    display: none;
+    &._active{
+      display: block;
+    }
+  }
+  &.tab-linked{
+    display: none;
+    &._active{
+      display: block;
+    }
+  }
 }
 
+//Helpers
+.h-invisible{
+  visibilty: hidden;
+}
 
 //Top info
 
 .top-info{
+  margin: 16px auto;
   table{
     width: 100%;
     tr{
@@ -127,7 +221,57 @@ a{
         text-align: center;
         padding: 20px;
         div{
+          position: relative;
           color: $main;
+          i{
+            position: absolute;
+            display: block;
+            width: 71px;
+            height: 58px;
+            &.employees{
+              background: url(../images/employees.jpg) no-repeat;
+              top: -5px;
+              right: 119px;
+            }
+            &.experience{
+              background: url(../images/experience.jpg) no-repeat;
+              top: -2px;
+              right: 42px;
+            }
+            &.built{
+              background: url(../images/built.jpg) no-repeat;
+              top: -5px;
+              right: 121px;
+            }
+          }
+        }
+      }
+      &:nth-child(2){
+        .line{
+          position: relative;
+          width: 100%;
+          height: 5px;
+          background: $main;
+          top: -36px;
+          .tri{
+            position: absolute;
+            display: inline-block;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid $main;
+            width:auto;
+            background: none;
+            top: -6px;
+            &:nth-child(1) {
+              left: 110px;
+            }
+            &:nth-child(2) {
+              left: 420px;
+            }
+            &:nth-child(3) {
+              left: 760px;
+            }
+          }
         }
       }
     }
@@ -135,7 +279,7 @@ a{
   //Writing some styles outside of table just to improve readability
   .int{
     font-size: 100px;
-    margin-right: 7px;
+    margin-right: 22px;
     color: $main;
   }
   .text{
@@ -144,77 +288,185 @@ a{
     margin-right: 7px;
     text-align: left;
     color: $main;
+    line-height: 23px;
   }
 }
 
 //Current-works
 
-.current-works{
-  height: 30px;
-  margin: 20px auto;
-  background: $secondary;
+.services{
+  height: 135px;
+  margin: 40px auto;
+  margin-top: -10px;
+  table{
+    width: 100%;
+    tr{
+      td{
+        width: 33%;
+        .wrap{
+          position: relative;
+          padding: 12px;
+          cursor: pointer;
+        }
+        .left-line{
+          background: $main;
+          position: absolute;
+          left: 0px;
+          width: 4px;
+          height: 65px;
+        }
+        .image{
+          width: 235px;
+          height: 100px;
+          background: $secondary;
+        }
+        p{
+          color: $main;
+          font-size: 21px;
+        }
+      }
+    }
+  }
 }
 
 //About
 
 .about{
   height: 410px;
+  margin-top: 50px;
   .quot{
     position: absolute;
+    font: 500 24px Bad Script;
     top:0px;
     right: 0px;
     width: 250px;
     height: 250px;
     color: white;
-    background: $main;
+    // needs latest Compass, add '@import "compass"' to your scss
+    background-color: rgb(0,119,162); // Old browsers
+    @include filter-gradient(#0077a2, #6baec9, vertical); // IE6-9
+    @include background-image(linear-gradient(top,  rgba(0,119,162,1) 0%,rgba(107,174,201,1) 100%));
     padding: 30px;
-    font-size: 21px;
     line-height: 33px;
+    .quott{
+      display: block;
+      position: absolute;
+      font-size: 120px;
+      color: white;
+      font-family: Arial;
+      &.open{
+        top: 43px;
+        left: 8px;
+      }
+      &.close{
+        top: 296px;
+        left: 260px;
+      }
+    }
+  }
+  p{
+    padding-left: 20px;
+    &.strong{
+      color: $main;
+      font-weight: bold;
+    }
   }
 }
 
 //Constructor teaser
 
 .constr-teaser {
+  height: 380px;
+  h2{
+    text-align: center;
+  }
+  h3{
+    font-size: 20px;
+    margin: 0;
+    .number{
+      font-size: 40px;
+      font-weight: bold;
+      color: $main_light;
+    }
+  }
   .constr-button {
     position: relative;
-    width: 450px;
-    height: 167px;
+    width: 420px;
+    height: 120px;
     background: $main;
     margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
     cursor: pointer;
     @include transition(all .4s ease);
+    @include border-radius(16px);
+    @include opacity(.8);
     &:hover{
-      background: $main_light;
+      @include opacity(1);
+      @include transform(scale(1.05));
     }
     .logo {
       position: absolute;
-      top: 22px;
+      top: 11px;
       left: 22px;
-      width: 120px;
-      height: 120px;
       background: white;
       display: block;
-      font-size: 30px;
-      color: white;
     }
     p{
       color: white;
       width: 330px;
       position: absolute;
-      left: 170px;
-      top: 51px;
+      left: 120px;
+      top: 24px;
       font-size: 30px;
       span{
         font-size: 21px;
         margin-top: -2px;
         display: block;
-        color: #ccc;
+        color: $main_light;
       }
     }
   }
 }
 
+.modal {
+  visibility: hidden;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  z-index: 200;
+  width: 700px;
+  padding: 20px;
+  margin-left: -350px;
+  overflow: auto;
+  background-color: #ffffff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  @include box-shadow(#ccc 0 0 10px);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  @include transition(all 500ms cubic-bezier(0.655, -0.600, 0.520, 1.650));
+  &._opened{
+    visibility: visible;
+    top: 10%;
+  }
+  p{
+    margin-bottom: 10px;
+    &.strong{
+      color: $main;
+      font-weight: bold;
+    }
+    .number{
+      font-size: 24px;
+      font-weight: bold;
+      color: $main_light;
+    }
+  }
+}
 
 
-@import 'constructor'
+@import 'constructor';
+@import 'contacts';
+@import 'gallery';

@@ -1,0 +1,313 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="scripts/vendor/bootstrap.js"></script>
+    <script src="components/modernizr/modernizr.js"></script>
+    <script src="components/underscore/underscore-min.js"></script>
+    <script src="components/backbone/backbone-min.js"></script>
+    <script src="scripts/constr.js"></script>
+    <!-- endbuild -->
+</head>
+<body >
+
+<div class="modal-overlay"></div>
+
+<div id="help-modal" class="modal">
+    <h3>Расчет стоимости строительства</h3>
+    <p><strong>В стоимость работ включено: </strong>зарплата рабочим, стоимость материалов, аренда спецтехники<br>
+    </p>
+    <p class="strong">Обращаем ваше внимание на то, что конструкции домов рассчитываются
+    без учета стоимости лестниц, водных узлов, тамбуров, веранд, дымовых и вентиляционных труб</p>
+    <h3>Для расчета вам необходимо: </h3>
+    <p><span class="number">1.</span>Выбрать варианты фундаментов, стен и кровли. Вы также можете выбрать строительные услуги отдельно (напр.
+        только фундамент, или только стены и кровля). Для этого просто снимите галочку с флажков ненужных услуг (квадрат с галочкой слева).</p>
+    <p><span class="number">2.</span>Введите площадь основания дома, исходя из наружных размеров стен в поле ввода, затем нажмите клавишу "Enter".</p>
+    <p><span class="number">3.</span>Выберите особые параметры строительства (если имеются)</p>
+    <p>Снизу, на синем поле вы увидите конечную сумму (справа) и отдельную стоимость услуг за квадратный метр (слева)</p>
+</div>
+
+<header>
+    <div class="gradient-overlay"></div>
+    <div class="logo-cont c-centered">
+        <div class="logo"></div>
+        <p class="phone">+7 498 610-07-09 &nbsp; +7 903 656-65-65</p>
+        <nav><a href="index.html">О КОМПАНИИ</a><a href="constructor.html">РАСЧЕТ СТОИМОСТИ</a><a href="gallery.html">НАШИ ПРОЕКТЫ</a><a href="contacts/html">КОНТАКТЫ</a></nav>
+    </div>
+</header>
+
+<section class="constructor">
+
+    <section id="header" class="c-centered">
+
+        <h1>Расчет стоимости строительства</h1>
+
+        <div class="step house-block">
+            <div class="number">1</div>
+            <h3>Выберите параметры дома <a class="modal-open help-toggle" data-target="help-modal">Как это работает?</a></h3>
+
+            <div class="house">
+                <div class="roof _disabled"></div>
+                <div class="box"></div>
+                <div class="basement"></div>
+            </div>
+            <div class="house-filters roof-filter">
+                <table>
+                    <tr>
+                        <td>
+                            <input id="roof" class="checkboxes" data-link="roof" type="checkbox"/>
+                        </td>
+                        <td class="filter-block">
+                            <div class="wrap">
+                                <div class="disabled-overlay"></div>
+                                <h4>КРОВЛЯ</h4>
+                                <select name="" id="roof-type">
+                                    <option value="bitum">Битумная черепица</option>
+                                    <option value="metall">Металлочерепица</option>
+                                </select>
+                                <select name="" id="roof-heat">
+                                    <option value="heat">С утеплением</option>
+                                    <option value="cold">Без утепления</option>
+                                </select>
+                                <div class="arrows arrow-top"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="house-filters box-filter">
+                <table>
+                    <tr>
+                        <td><input id="box" class="checkboxes" data-link="box" type="checkbox"/></td>
+                        <td class="filter-block">
+                            <div class="wrap">
+                                <div class="disabled-overlay"></div>
+                                <h4>СТЕНЫ И ПЕРЕКРЫТИЯ</h4>
+                                <select name="" id="box-type">
+                                    <option value="1">Один этаж с мансардой</option>
+                                    <option value="2">Два этажа</option>
+                                    <option value="3">Два этажа с мансардой</option>
+                                </select>
+                                <select name="" id="box-mat">
+                                    <option value="gas_nosiding">Газоблоки без облицовки</option>
+                                    <option value="gas_siding_brick">Газоблоки обложенные кирпичем</option>
+                                    <option value="brick_heat">Кирпич с утеплением</option>
+                                </select>
+                                <div class="arrows arrow-middle"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="house-filters basement-filter">
+                <table>
+                    <tr>
+                        <td><input id="basement" class="checkboxes" data-link="basement" type="checkbox"/>
+                        </td>
+                        <td class="filter-block _disabled">
+                            <div class="wrap">
+                                <div class="disabled-overlay"></div>
+                                <h4>ФУНДАМЕНТ</h4>
+                                <select name="" id="basement-sl">
+                                    <option value="lent_base">Ленточный с подвалом</option>
+                                    <option value="mono_low">Монолитная плита (низкий цоколь)</option>
+                                    <option value="mono_high">Монолитная плита (высокий цоколь)</option>
+                                    <option value="svai_low">Буронабивные сваи (низкий цоколь)</option>
+                                    <option value="svai_high">Буронабивные сваи (высокий цоколь)</option>
+                                    <option value="lent_low">Ленточный (низкий цоколь)</option>
+                                    <option value="lent_high">Ленточный (высокий цоколь)</option>
+                                </select>
+                                <input id="waters" type="checkbox"/><label for="">Грунтовые воды</label>
+                                <div class="arrows arrow-bottom"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <h3>Введите площадь застройки: <input id="area" type="text"/> <label for="" style="font-size: inherit">м<sup>2</sup></label></h3>
+            <span class="help">Это площадь основания дома по наружному обмеру стен</span>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <h3>Особые параметры проекта: </h3>
+            <input id="hard-loc" type="checkbox"/><label for="">Стесненные условия работы</label>
+            <input id="hard-const" type="checkbox"/><label for="">Сложные конструктивные решения</label>
+            <input id="no-docs" type="checkbox"/><label for="">Отсутствие проектной документации</label>
+        </div>
+
+
+    </section>
+
+    <section id="price">
+        <div class="wrap">
+            <table class="c-centered">
+                <tr>
+                    <td class="math">
+                        <table>
+                            <tr>
+                                <td>Фундамент:</td>
+                                <td>
+                                    <div>120000p
+                                        <div class="plus">+</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Коробка:</td>
+                                <td>
+                                    <div>280000p
+                                        <div class="plus">+</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Кровля:</td>
+                                <td>
+                                    <div>189000p</div>
+                                    <div class="plus">+</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td id="equal">=</td>
+                    <td class="total">
+                        <h4>Итого:</h4>
+
+                        <p id="total-cont"></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="c-centered">
+            <div class="left-grid">
+                <a class="tab tab-switch _active" data-target="basement-tab">Фундамент</a>
+                <a class="tab tab-switch" data-target="box-tab">Стены и перекрытия</a>
+                <a class="tab tab-switch" data-target="roof-tab">Кровля</a>
+                <div class="tab tab-linked photos" data-tab-linked="basement-tab">
+                    <div class="wrap"><img src="images/left/basement1.jpg" alt="Фундамент"/></div>
+                    <div class="wrap"><img src="images/left/basement2.jpg" alt="Фундамент"/></div>
+                        <div class="wrap"><img src="images/left/basement3.jpg" alt="Фундамент"/></div>
+                </div>
+
+                <div class="tab tab-linked photos" data-tab-linked="box-tab">
+                    <div class="wrap"><img src="images/left/prorab1.jpg" alt="Кровля"/></div>
+                    <div class="wrap"><img src="images/left/prorab2.jpg" alt="Кровля"/></div>
+                    <div class="wrap"><img src="images/left/prorab3.jpg" alt="Кровля"/></div>
+                </div>
+
+                <div class="tab tab-linked photos" data-tab-linked="roof-tab">
+                    <div class="wrap"><img src="images/left/roof1.jpeg" alt="Стены и перекрытия"/></div>
+                    <div class="wrap"><img src="images/left/roof2.jpeg" alt="Стены и перекрытия"/></div>
+                    <div class="wrap"><img src="images/left/roof3.jpeg" alt="Стены и перекрытия"/></div>
+                </div>
+
+
+            </div>
+            <div class="right-grid">
+                <div id="basement-tab" class="tab tab-content _active">
+                    <h2>Фундамент</h2>
+                    <p>Рытье котлована и укладка фундамента - один из основных и важных этапов строительства. Фундамент - это основа вашего дома. С закладки прочной основы начинается любое строительство.
+                        Только надежный фундамент сможет обеспечить вашему дому долговечность.</p>
+                    <h4>В зависимости от материала, из которого выполняют фундамент, различают:</h4>
+                    <ul>
+                        <li>Фундамент из бетона</li>
+                        <li>фундамент из бетона в сочетании с кирпичной кладкой</li>
+                        <li>фундамент из бетона в сочетании с кладкой из камня.</li>
+                    </ul>
+                    <h4>По способу опирания на грунт, фундаменты разделяют на:</h4>
+                    <ul>
+                        <li><strong>ленточный фундамент</strong>, имеет одинаковую форму поперечного сечения по всему периметру стен здания (в том числе и под всеми его внутренними несущими стенами). Ленточный фундамент сегодня является самыми популярными среди строителей. Их используют при строительстве зданий любого типа (в том числе с тяжелыми стенами), имеющих цокольные этажи и подвальные помещения. Ленточный фундамент прокладывают сплошной линией под всеми наружными и внутренними капитальными стенами. Фактически, сам ленточный фундамент и представляет собой стену – высокую или не очень (в зависимости от глубины закладки). Как правило, его создают под зданиями с тяжелой несущей способностью.
+                            Не рекомендуется применять ленточный фундамент в грунтах с глубоким промерзанием и в пучинистых грунтах</li>
+                        <li><strong>столбчатый (свайный) фундамент</strong> – вид фундамента, получивший большое распространение благодаря своей низкой себестоимости. Применяется для постройки зданий с легкой несущей способностью. Финансовые затраты в 1,5–2 раза меньше по сравнению с ленточными фундаментами. В качестве основного несущего элемента данных фундаментов выступает столб (свая). Материал, из которого изготовлен столб (свая), может быть разным. Это и дерево, и камень, и кирпич, и бетон, и железобетон.
+                            А также и асбестовая труба, используемая в качестве формы с последующим</li>
+                        <li><strong>монолитная плита</strong>– вид фундамента, предназначенные для использования в грунтах с большой просадкой и тяжелых пучинистых грунтах. Конструкция их однотипная и жесткая. Как правило, это одна плита, расположенная под всем периметром здания. Положительными качествами данного вида фундаментов является то, что они отлично выравнивают разнообразные перемещения грунтов как в вертикальной, так и в горизонтальной плоскости. Отсюда еще одно их название – плавающие. Чаще всего они используются при строительстве малоэтажек с небольшими и простыми формами плана здания.
+                            Однако финансовые затраты на их сооружение немалые,
+                            так как используются огромные объемы бетона и количество арматуры.</li>
+                    </ul>
+
+                    <p>Мы выполняем весь комплекс работ по возведению всех типов фундаментов зданий и сооружений «под ключ». Доверьте устройство фундамента вашего дома специалистам нашей компании и мы вас не подведем.</p>
+
+                    <p class="strong">Компания «СтройТех» выполнит ваш фундамент качественно и в срок!</p>
+                </div>
+                <div id="box-tab" class="tab tab-content">
+                    <h2>Стены и перекрытия</h2>
+                    <p>Строительство стен и перекрытий - второй этап строительства после возведения фундамента. От конструкции стен во многом зависит теплозащитная функция здания, а также долговечность и эстетический вид.</p>
+                    <h4>Компания "Стройтех" возводит стены из следующих материалов: </h4>
+                    <ul>
+                        <li><strong>КИРПИЧ</strong>. Данный материал стен наиболее долговечен и экологически чист. Имеет прекрасные эксплуотационные характеристики. Мы рекомендуем именно данный материал для возведения стен!</li>
+                        <li><strong>ГАЗОБЛОКИ</strong>. Имеет хорошие теплоизоляционные характеристики, высокотехнологичен. Но по сравнению с кирпичем имеет меньшую долговечность и несущую способность.</li>
+                        <li><strong>КЕРАМИЧЕСКИЕ БЛОКИ</strong>. Имеют схожие характеристики с кирпичем, но при этом возведение стен из данного материала менее трудозатратно.</li>
+                    </ul>
+                    <p class="strong">Мы гарантируем вам высокое качество выполнения работ из любого из представленных материалов!</p>
+                </div>
+                <div id="roof-tab" class="tab tab-content">
+                    <h2>Кровля</h2>
+                    <p>Возведение кровли- наиболее ответственный этап работ. Так как кровельные работы содержат очень много скрытых работ, которые существенно влияют на долговечность зания, мы уделяем им особое внимание.</p>
+                    <h4>Мы предлагаем следующие варианты кровли:</h4>
+                    <ul>
+                        <li><strong>КРОВЛЯ МАНСАРДНОГО ТИПА</strong>. Это тип кровли с утепленными скатами. Применяется при возведении домов с мансардными этажами. Нижняя поверхность кровельного этажа является потолком мансардного этажа. Такой тип кровли требует особо тщательного внимания к качеству работ.</li>
+                        <li><strong>ЧЕРДАЧНАЯ КРОВЛЯ</strong>. Это кровля с неутепленными скатами и холодным чердаком. Наиболее предпочтительный и долговечный тип кровли. Удобен в экспуатации.</li>
+
+                    </ul>
+                    <h4>Мы предлагаем кровельное покрытие из следующих материалов:</h4>
+                    <ul>
+                        <li><strong>МЕТАЛЛОЧЕРЕПИЦА</strong></li>
+                        <li><strong>БИТУМНАЯ ЧЕРЕПИЦА</strong></li>
+                        <li><strong>КЕРАМОЧЕРЕПИЦА</strong></li>
+                        <li><strong>ЧЕРЕПИЦА ИЗ ПОЛИМЕРНЫХ МАТЕРИАЛОВ</strong></li>
+                    </ul>
+                    <p class="strong">Опыт наших специалистов позволяет выполнить данный вид работ на высочайшем уровне. Кровля любого типа из любых материалов прослужит вам долгие годы!</p>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </section>
+
+
+</section>
+
+
+<footer>
+    <div class="c-centered">
+        <p>2013 СтройТех</p>
+        +7 903 579-84-36
+        <nav><a href="index.html">О КОМПАНИИ</a><a href="constructor.html">РАСЧЕТ СТОИМОСТИ</a><a href="gallery.html">НАШИ РАБОТЫ</a><a href="contacts.html">КОНТАКТЫ</a></nav>
+    </div>
+</footer>
+
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<script type="text/javascript">
+    $(function(){
+       $('.tab').tabs()
+    });
+</script>
+</body>
+</html>

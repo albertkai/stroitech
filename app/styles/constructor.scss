@@ -1,0 +1,320 @@
+.constructor{
+  h1{
+    margin: 0;
+    margin-top: 20px;
+  }
+  .help-toggle{
+    font-size: 17px;
+    color: $main;
+    border-bottom: 1px dashed;
+    margin-left: 125px;
+    &:hover{
+      color: $main_light;
+    }
+  }
+  .step{
+    position: relative;
+    border-bottom: 2px dashed $main_light;
+    padding-left: 120px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    &:first-of-type{
+      margin-top: -24px;
+    }
+    label{
+      margin: 0 5px;
+      margin-right: 10px;
+      color: $main;
+      font-size: 15px;
+    }
+    .arrows{
+      position: absolute;
+      border-bottom: 1px dashed $main-light;
+      &.arrow-top{
+        background: url(../images/arrow_top.png) no-repeat;
+        left: 430px;
+        top: 39px;
+        width: 228px;
+      }
+      &.arrow-middle{
+        background: url(../images/arrow_middle.png) no-repeat;
+        top: 39px;
+        left: 617px;
+        width: 86px;
+      }
+      &.arrow-bottom{
+        background: url(../images/arrow_bottom.png) no-repeat;
+        left: 590px;
+        top: 38px;
+        width: 97px;
+      }
+    }
+    .help{
+      position: relative;
+      top: -20px;
+    }
+    &:last-of-type{
+      border-bottom: 0;
+    }
+    #area{
+      width: 100px;
+    }
+    .number{
+      position: absolute;
+      left: 0px;
+      font-size: 100px;
+      font-weight: bold;
+      line-height: 90px;
+      height: 90px;
+      width: 90px;
+      text-align: center;
+      @include border-radius(60px);
+      border: 2px solid $main-light;
+      color: $main_light;
+    }
+  }
+  .house-block{
+    position: relative;
+    height: 480px;
+    .house {
+      position: relative;
+      height: 300px;
+      width: 230px;
+      left: 599px;
+      top: 20px;
+      @include transform(scale(1.1));
+      div{
+        @include transition(all .4s ease);
+        @include opacity(.7);
+        &._active{
+          transform: scale(1.2);
+          -moz-transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          -o-transform: scale(1.2);
+          @include opacity(1.2);
+        }
+        &._disabled{
+          @include opacity(.2);
+        }
+      }
+      .roof {
+        position: absolute;
+        width: 224px;
+        height: 124px;
+        background: url(../images/roof.png);
+      }
+      .box {
+        position: absolute;
+        background: url(../images/box.png);
+        width: 202px;
+        height: 125px;
+        top: 133px;
+        left: 12px;
+      }
+      .basement {
+        position: absolute;
+        background: url(../images/basement.png);
+        width: 203px;
+        height: 51px;
+        top: 268px;
+        left: 12px;
+      }
+    }
+    .house-filters {
+      position: absolute;
+      h4{
+        color: white;
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+      &.roof-filter{
+        top: 141px;
+        left: 95px;
+      }
+      &.box-filter{
+        top: 266px;
+        left: 10px;
+      }
+      &.basement-filter{
+        left: 30px;
+        top: 391px;
+      }
+      label{
+        color: white;
+      }
+      input[type="checkbox"]{
+        margin-left: 10px;
+      }
+      table{
+        tr{
+          td{
+            &:nth-child(1){
+              padding: 14px;
+            }
+            &:nth-child(2){
+              .wrap{
+                background: $main_light;
+                padding: 20px;
+                border-radius: 12px;
+                color: white;
+                @include transition(all .4s ease);
+                .disabled-overlay{
+                  display: none;
+                  width: 92%;
+                  height:100%;
+                  position: absolute;
+                  top: 0px;
+                  right: 0px;
+                  background: white;
+                  @include opacity(.7);
+                }
+              }
+              &:hover{
+                .wrap{
+                  background: $main;
+                }
+              }
+              &._disabled{
+                .disabled-overlay{
+                  display: block;
+                }
+                &:hover{
+                  .wrap{
+                    background: $main_light;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #price{
+    position: relative;
+    background: $main;
+    height: 150px;
+    width: 100%;
+    margin: 40px 0;
+    border-top: 4px solid $main;
+    border-bottom: 4px solid $main;
+    @include box-sizing(border-box);
+    .wrap{
+      width: 100%;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      height: 100%;
+      @include box-sizing(border-box);
+      table{
+        h5{
+          color: $main_light;
+          font-size: 24px;
+        }
+        h4{
+          color: $main_light;
+          font-size: 30px;
+        }
+        tr{
+          td{
+            p{
+              font-size: 28px;
+              color: $secondary;
+            }
+            &.math{
+              table{
+                width: 100%;
+                margin-top: 12px;
+                tr{
+                  td{
+                    div{
+                      position: relative;
+                    }
+                    color: $secondary;
+                    font-size: 24px;
+                    .plus{
+                      position: absolute;
+                      color: white;
+                      height: 50px;
+                      line-height: 50px;
+                      top: 0px;
+                      font-size: 28px;
+                      left: 115px;
+                    }
+                   &:nth-child(2){
+                     width: 65%;
+                     padding-left: 20px;
+                   }
+                    &:nth-child(1){
+                      text-align: right;
+                      color: white;
+                      font-size: 18px;
+                    }
+                  }
+                  &:last-of-type{
+                    td{
+                      .plus{
+                          display: none;
+
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &.total{
+              width: 41%;
+              p{
+                color: white;
+                font-size: 70px;
+                line-height: 65px;
+                #count-error{
+                  font-size: 20px;
+                  top: -18px;
+                  position: relative;
+                }
+              }
+            }
+            &#equal{
+              font-size: 120px;
+              line-height: 115px;
+              color: white;
+              width: 175px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #info {
+    clear: both;
+    .left-grid {
+      width: 300px;
+      float: left;
+      margin-right: 25px;
+      min-height: 250px;
+      .photos {
+        margin-top: 40px;
+        padding: 30px;
+        //border: 2px solid $main_light;
+        @include box-shadow($main 0 0 10px);
+        img {
+          width: 236px;
+          border: 1px solid white;
+          @include box-shadow($main 0 0 10px);
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .right-grid {
+      width: 640px;
+      float: left;
+      p{
+        color: #666;
+        &.strong{
+          font-size: 18px;
+          color: $main;
+        }
+      }
+    }
+  }
+}

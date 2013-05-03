@@ -3,114 +3,152 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Bad+Script|Roboto:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-        <header>
-            <div class="gradient-overlay"></div>
-            <div class="logo-cont c-centered">
-                <div class="logo"></div>
-                <p class="phone">+7 903 656-65-65</p>
-                <nav><a>О КОМПАНИИ</a><a>РАСЧЕТ СТОИМОСТИ</a><a>НАШИ ПРОЕКТЫ</a><a>КОНТАКТЫ</a></nav>
-            </div>
-        </header>
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="components/gmaps/gmaps.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
 
-        <section class="top-info c-centered">
-            <table>
-                <tr>
-                    <td><div><span class="int">36</span><span class="text">сотрудников</span></div></td>
-                    <td><div><span class="int">12</span><span class="text">лет <br> опыта</div></td>
-                    <td><div><span class="int">72</span><span class="text">выполненных <br>проекта</div></td>
-                </tr>
-                <tr>
-                    <td colspan="3"><div></div></td>
-                </tr>
-            </table>
-        </section>
+<header>
+    <div class="gradient-overlay"></div>
+    <div class="logo-cont c-centered">
+        <div class="logo"></div>
+        <p class="phone">+7 498 610-07-09 &nbsp; +7 903 656-65-65</p>
+        <nav><a href="index.html">О КОМПАНИИ</a><a href="constructor.html">РАСЧЕТ СТОИМОСТИ</a><a href="gallery.html">НАШИ ПРОЕКТЫ</a><a href="contacts/html">КОНТАКТЫ</a></nav>
+    </div>
+</header>
 
-        <section class="current-works c-centered">
+<section class="contacts">
 
-        </section>
+    <section id="map"></section>
 
-        <section class="about c-centered">
+    <section class="info c-centered">
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <div class="left-line"></div>
+                        <h3>ТЕЛЕФОНЫ:</h3>
+                         <p>+7 498 610-07-09 <span>-ОФИС</span> <br>
+                            +7 903 579-84-36 <span>-ПРОРАБ</span><br></p>
+                            +7 962 965-15-01 <span>-ИНЖЕНЕР</span></p>
+                             <span>Звоните нам с 10:00 до 20:00 ежедневно</span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="left-line"></div>
+                        <h3>E-MAIL:</h3>
+                        <p>stroitech@yandex.ru <br></p>
+                        <span>Отправляйте нам свой проект, мы посчитаем стоимость и ответим вам в ближайшее время</span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div class="left-line"></div>
+                        <h3>АДРЕС:</h3>
+                        <p>г. Мытищи, ул. 3-я Крестьянская 25, <br> БЦ "Крестьянский" <br></p>
+                        <span>Наш специалист может подъехать в удобное вам место</span>
 
-            <div class="grid-bigger">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
 
-                <h3>О КОМПАНИИ "СТРОЙТЕХ"</h3>
-
-                <p>Сразу же после громкой визуализации сверху, чтобы снять опасения пользователя, заявить про минимальную цену.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur earum impedit omnis optio
-                    repellat soluta, tempore voluptatem. Debitis ea, itaque modi praesentium quisquam repellendus!
-                Наш главный секрет в том, что мы не содержим раздутый штат менеджеров, наши сотрудники - непосредственные исполнители работ.</p>
-
-            </div>
-
-            <div class="quot">
-
-                <i class="quot-open"></i>
-                <i class="quot-close"></i>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at commodi dolore enim
-                    exercitationem fugiat illo, nostrum obcaecati omnis sequi.</p>
-
-            </div>
-
-        </section>
-
-        <div class="c-line c-centered"></div>
-
-
-        <section class="visualize c-centered">
-            В этой секции описать основные выгоды, которые получит пользователь от сотрудничества с нами
-            <div class="graph">
-                <div>Надежность</div>
-                <div>Надежность</div>
-                <div>Надежность</div>
-                <div>Надежность</div>
-            </div>
-
-            <div class="logo-gif">
-
-            </div>
-
-        </section>
-
-        <section class="constr-teaser c-centered">
-
-            <h2>Интересует цена?</h2>
-            <h4>Уникальное предложение:</h4>
-            <div class="constr-button">
-                <i class="logo"></i>
-                <p>ОНЛАЙН-РАСЧЕТ
-                <span>стоимости строительства</span>
-                </p>
-            </div>
-
-        </section>
-
-        <footer>
-            <div class="c-centered">2013 СтройТех</div>
-        </footer>
+</section>
 
 
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+<footer>
+    <div class="c-centered">
+        <p>2013 СтройТех</p>
+        +7 903 579-84-36
+        <nav><a href="index.html">О КОМПАНИИ</a><a href="constructor.html">РАСЧЕТ СТОИМОСТИ</a><a href="gallery.html">НАШИ РАБОТЫ</a><a href="contacts.html">КОНТАКТЫ</a></nav>
+    </div>
+</footer>
 
-        <!-- build:js scripts/main.js -->
-        <script data-main="scripts/main" src="components/requirejs/require.js"></script>
-        <!-- endbuild -->
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<script type="text/javascript">
+    $(function(){
+        var map = new GMaps({
+            el:"#map",
+            lat:55.892883,
+            lng:37.714754,
+            zoom:15,
+            zoomControl:true,
+            zoomControlOpt:{
+                style:"MEDIUM",
+                position:"RIGHT_BOTTOM"
+            },
+            panControl:true,
+            streetViewControl:false,
+            mapTypeControl:false,
+            overviewMapControl:false,
+            scrollwheel:false
+        });
+
+        var styles = [
+            {
+                stylers:[
+                    { hue:"#0077a2" },
+                    { saturation:0 }
+                ]
+            },
+            {
+                featureType:"road",
+                elementType:"geometry",
+                stylers:[
+                    { lightness:100 },
+                    { visibility:"simplified" }
+                ]
+            },
+            {
+                featureType:"road",
+                elementType:"labels",
+                stylers:[
+                    { saturation:50 }
+                ]
+            }
+        ];
+
+        map.addStyle({
+            styledMapName:"Styled Map",
+            styles:styles,
+            mapTypeId:"map_style"
+        });
+
+        map.setStyle("map_style");
+
+
+        map.drawOverlay({
+            lat:55.892883,
+            lng:37.714754,
+            content:'<div class="overlay"></div>',
+            verticalAlign:'top'
+        });
+    });
+
+
+</script>
+
+<!-- build:js scripts/main.js -->
+<script data-main="scripts/main" src="components/requirejs/require.js"></script>
+<!-- endbuild -->
 </body>
 </html>

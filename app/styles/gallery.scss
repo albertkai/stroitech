@@ -1,0 +1,28 @@
+.gallery-cont{
+  overflow: hidden;
+  clear: both;
+  .image-cont{
+    width: 235px;
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #f1f1f1;
+    @include box-sizing(border-box);
+    @include transition(all .4s ease);
+    float: left;
+    cursor: pointer;
+    img{
+      width: 215px;
+      border: 1px solid white;
+      @include box-sizing(border-box);
+    }
+    &:hover{
+      background: $main-light;
+      color: white;
+      border: 1px solid white;
+    }
+    &:nth-child(3n+0){
+      margin-right: 0;
+    }
+  }
+}
